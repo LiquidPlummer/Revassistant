@@ -21,7 +21,7 @@ public class ActionItem {
     private Boolean complete;
 
     @Column(name = "due_date")
-    private LocalDateTime dueDate;
+    private String dueDate;
 
     @Transient
     private String transientTest;
@@ -34,13 +34,13 @@ public class ActionItem {
     public ActionItem() {
     }
 
-    public ActionItem(String title, String body, LocalDateTime dueDate) {
+    public ActionItem(String title, String body, String dueDate) {
         this.title = title;
         this.body = body;
         this.dueDate = dueDate;
     }
 
-    public ActionItem(Integer actionItemId, String title, String body, LocalDateTime dueDate) {
+    public ActionItem(Integer actionItemId, String title, String body, String dueDate) {
         this.actionItemId = actionItemId;
         this.title = title;
         this.body = body;
@@ -79,11 +79,11 @@ public class ActionItem {
         this.complete = complete;
     }
 
-    public LocalDateTime getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
