@@ -1,9 +1,20 @@
-package com.revature.revassistant.models;
+package com.revature.revassistant.beans.models;
 
+import javax.persistence.*;
+
+
+@Entity
 public class Authorization {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String username;
+
+    @Column
     private String password;
+
 
     public Authorization() {
     }
