@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.revature</groupId>
 	<artifactId>Revassistant</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
+	<packaging>war</packaging>
 	<name>Revassistant</name>
 	<description>Web app to help trainers and associates!</description>
 	<properties>

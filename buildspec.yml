@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
+    commands:
+#      - echo ======================================== PRE BUILD ========================================
+#      - pwd
+#      - ls -al
+      - aws s3 cp s3://kyle-properties-bucket/revassistant.properties src/main/resources/application.properties
+#      - aws s3 cp s3://kyle-properties-bucket/api-key.properties src/main/resources/api-key.properties
+#      - ls -al
+#      - ls -al src/main/resources/
+  build:
+    commands:
+      - mvn package -DskipTests
+  post_build:
+    commands:
+      - mv target/Revassistant-0.2.war ROOT.war
+artifacts:
+  files:
+    - ROOT.war
+    - .ebextensions/**/*
