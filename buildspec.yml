@@ -6,7 +6,6 @@ phases:
       java: corretto8
   pre_build:
     commands:
-#      - echo ======================================== PRE BUILD ========================================
 #      - pwd
 #      - ls -al
       - aws s3 cp s3://kyle-properties-bucket/revassistant.properties src/main/resources/application.properties
@@ -18,7 +17,7 @@ phases:
       - mvn package -DskipTests
   post_build:
     commands:
-      - mv target/revassistant-0.2.war ROOT.war
+      - mv target/revassistant-*.*.war ROOT.war
 artifacts:
   files:
     - ROOT.war
