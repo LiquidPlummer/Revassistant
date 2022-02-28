@@ -18,7 +18,7 @@ phases:
       - mvn package -DskipTests
   post_build:
     commands:
-      - mv target/Revassistant-0.2.war ROOT.war
+      - mv target/revassistant-0.2.war ROOT.war
 artifacts:
   files:
     - ROOT.war
