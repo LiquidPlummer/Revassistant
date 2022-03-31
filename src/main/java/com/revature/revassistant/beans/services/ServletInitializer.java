@@ -8,6 +8,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        System.out.println("==========TEST=============");
         return application.sources(RevassistantApplication.class);
     }
 
